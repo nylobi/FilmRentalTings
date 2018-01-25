@@ -1,3 +1,4 @@
 # FilmRentalTings
 OOP 
-Hi there 
+Hi there Hugo
+whatupfamsquad!
