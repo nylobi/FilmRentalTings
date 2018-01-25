@@ -13,25 +13,47 @@ namespace Template.Model
         //An implementation of this interface is injected automatically by the framework
         public IDomainObjectContainer Container { set; protected get; }
         #endregion
-        public Student CreateNewStudent()
+        public Customer CreateNewCustomer()
         {
             //'Transient' means 'unsaved' -  returned to the user
             //for fields to be filled-in and the object saved.
-            return Container.NewTransientInstance<Student>();
+            return Container.NewTransientInstance<Customer>();
         }
 
-        public IQueryable<Student> AllStudents()
+        public IQueryable<Customer> AllCustomers()
         {
             //The 'Container' masks all the complexities of 
             //dealing with the database directly.
-            return Container.Instances<Student>();
+            return Container.Instances<Customer>();
         }
 
-        public IQueryable<Student> FindStudentByName(string name)
+        public IQueryable<Customer> FindCustomerByName(string name)
         {
             //Filters students to find a match
-            return AllStudents().Where(c => c.FullName.ToUpper().Contains(name.ToUpper()));
+            return AllCustomers().Where(c => c.FullName.ToUpper().Contains(name.ToUpper()));
         }
+
+        public Film CreateNewFilm()
+        {
+            //'Transient' means 'unsaved' -  returned to the user
+            //for fields to be filled-in and the object saved.
+            return Container.NewTransientInstance<Film>();
+        }
+
+        public IQueryable<Film> AllFilms()
+        {
+            //The 'Container' masks all the complexities of 
+            //dealing with the database directly.
+            return Container.Instances<Film>();
+        }
+
+        public IQueryable<Film> FindFilmByTitle(string title)
+        {
+            //Filters students to find a match
+            return AllFilms().Where(c => c.Title.ToUpper().Contains(title.ToUpper()));
+        }
+
+
     }
 
 }
