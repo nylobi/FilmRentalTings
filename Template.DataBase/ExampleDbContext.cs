@@ -10,10 +10,9 @@ namespace Template.DataBase
         {
             Database.SetInitializer(initializer);
         }
-
         public DbSet<Customer> Customer { get; set; }
         public DbSet<Film> Film { get; set; }
-
+        public DbSet<Rental> Rental { get; set; }
     }
 
 }

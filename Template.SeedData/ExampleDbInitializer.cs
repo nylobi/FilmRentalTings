@@ -3,29 +3,46 @@ using System.Data.Entity;
 using System.Linq;
 using Template.DataBase;
 using Template.Model;
+using System;
 
 namespace Template.SeedData
 {
-    public class ExampleDbInitializer : DropCreateDatabaseIfModelChanges<ExampleDbContext>
+    public class ExampleDbInitializer : DropCreateDatabaseAlways<ExampleDbContext>
     {
         private ExampleDbContext Context;
         protected override void Seed(ExampleDbContext context)
         {
             this.Context = context;
-            AddNewCustomer("Alie Algol");
-            AddNewCustomer("Forrest Fortran");
-            AddNewCustomer("James Java");
+            var alie = AddNewCustomer("Alie Algol");
+            var forrest = AddNewCustomer("Forrest Fortran");
+            var james = AddNewCustomer("James Java");
+            var tet = AddNewFilm("The Exploding Tire","Michael Bay", 10.99);
+            AddNewRental(tet, alie, new DateTime (2018,01,29), new DateTime(2018, 01, 31));
         }
 
-        private void AddNewCustomer(string name)
+        private Customer AddNewCustomer(string name)
         {
-            var st = new Customer() { FullName = name };
-            Context.Customer.Add(st);
+            var c = new Customer()
+            { FullName = name };
+            Context.Customer.Add(c);
+            Context.SaveChanges();
+            return c;
         }
-        private void AddNewFilm(string title)
+        private Film AddNewFilm(string title, string director, double price)
         {
-            var st = new Film() { Title = title };
-            Context.Film.Add(st);
+            var f = new Film()
+            {Title = title, Director = director, Price = price};
+            Context.Film.Add(f);
+            Context.SaveChanges();
+            return f;
+        }
+
+        private void AddNewRental(Film f, Customer c, DateTime sr, DateTime er)
+        {
+            var r = new Rental()
+            {Film = f, Customer = c, Startrental = sr, Endrental = er };
+            Context.Rental.Add(r);
+            Context.SaveChanges();
         }
     }
 }

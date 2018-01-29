@@ -14,5 +14,7 @@ namespace Template.Model
 
         [Title]
         public virtual string FullName { get; set; }
+
+
     }
 }

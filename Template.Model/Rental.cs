@@ -7,15 +7,15 @@ using NakedObjects;
 
 namespace Template.Model
 {
-    public class Film
+    public class Rental
     {
         [NakedObjectsIgnore]
         public virtual int Id { get; set; }
 
-        [Title]
-        public virtual string Title { get; set; }
-        public virtual string Director { get; set; }
-        public virtual double Price { get; set; }
+        public virtual DateTime Startrental { get; set; }
+        public virtual DateTime Endrental { get; set; }
 
+        public virtual Customer Customer { get; set; }
+        public virtual Film Film { get; set; }
     }
 }
