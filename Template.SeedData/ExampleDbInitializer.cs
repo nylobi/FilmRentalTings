@@ -16,8 +16,11 @@ namespace Template.SeedData
             var alie = AddNewCustomer("Alie Algol");
             var forrest = AddNewCustomer("Forrest Fortran");
             var james = AddNewCustomer("James Java");
-            var tet = AddNewFilm("The Exploding Tire","Michael Bay", 10.99);
-            AddNewRental(tet, alie, new DateTime (2018,01,29), new DateTime(2018, 01, 31));
+            var tet = AddNewFilm("The Exploding Tire","Michael Bay", 3.99);
+            var bt = AddNewFilm("BoomTown", "Michael Bay", 3.99);
+            var kb = AddNewFilm("Kabuum", "Michael Bay", 2.95);
+            AddNewRental(tet, alie, new DateTime (2018,01,29), new DateTime(2018, 02, 27));
+            AddNewRental(bt, forrest, new DateTime(2018, 01, 31), new DateTime(2018, 02, 10));
         }
 
         private Customer AddNewCustomer(string name)
