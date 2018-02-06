@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{5BBA91B2-8F10-4606-92A6-5D626658365B}"
 	ProjectSection(SolutionItems) = preProject
@@ -24,6 +24,11 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.Client", "Template.Client\Template.Client.csproj", "{9F3A372C-4F7F-4094-A399-BCB2E8397D2E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.SeedData", "Template.SeedData\Template.SeedData.csproj", "{DA6C0059-19B9-47AA-9282-36A169D11672}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36822562-804F-4757-8B98-267B1E104FF5}"
+	ProjectSection(SolutionItems) = preProject
+		To Do List.txt = To Do List.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -54,5 +59,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B88F6A5-20AC-4617-AF70-ECACAAEBD254}
 	EndGlobalSection
 EndGlobal

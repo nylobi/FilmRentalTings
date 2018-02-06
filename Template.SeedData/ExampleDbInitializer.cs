@@ -19,8 +19,8 @@ namespace Template.SeedData
             var tet = AddNewFilm("The Exploding Tire","Michael Bay", 3.99);
             var bt = AddNewFilm("BoomTown", "Michael Bay", 3.99);
             var kb = AddNewFilm("Kabuum", "Michael Bay", 2.95);
-            AddNewRental(tet, alie, new DateTime (2018,01,29), new DateTime(2018, 02, 27));
-            AddNewRental(bt, forrest, new DateTime(2018, 01, 31), new DateTime(2018, 02, 10));
+            AddNewRental(tet, alie, new DateTime (2018,01,29));
+            AddNewRental(bt, forrest, new DateTime(2018, 01, 31));
         }
 
         private Customer AddNewCustomer(string name)
@@ -40,10 +40,10 @@ namespace Template.SeedData
             return f;
         }
 
-        private void AddNewRental(Film f, Customer c, DateTime sr, DateTime er)
+        private void AddNewRental(Film f, Customer c, DateTime sr)
         {
             var r = new Rental()
-            {Film = f, Customer = c, Startrental = sr, Endrental = er };
+            {Film = f, Customer = c, Startrental = sr};
             Context.Rental.Add(r);
             Context.SaveChanges();
         }
