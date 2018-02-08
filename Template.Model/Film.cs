@@ -18,5 +18,7 @@ namespace Template.Model
         public virtual double Price { get; set; }
         public virtual int Stock { get; set; }
         public virtual string Genre { get; set; }
+        public virtual int AgeRating { get; set; }
+
     }
 }

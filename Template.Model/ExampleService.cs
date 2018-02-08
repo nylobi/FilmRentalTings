@@ -1,4 +1,5 @@
 ﻿using NakedObjects;
+using System;
 using System.Linq;
 
 
@@ -48,14 +49,11 @@ namespace Template.Model
             return AllFilms().Where(c => c.Title.ToUpper().Contains(title.ToUpper()));
         }
 
-        public Rental CreateNewRental()
+        public IQueryable<Film> FindFilmByAgeRating(int agerating)
         {
-            return Container.NewTransientInstance<Rental>();
-        }
-        public IQueryable<Rental> AllRentals()
-        {
-            return Container.Instances<Rental>();
+            return AllFilms().Where(c => c.AgeRating ==(agerating));
         }
 
+        
     }
 }

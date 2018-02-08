@@ -13,28 +13,28 @@ namespace Template.SeedData
         protected override void Seed(ExampleDbContext context)
         {
             this.Context = context;
-            var alie = AddNewCustomer("Alie Algol");
-            var forrest = AddNewCustomer("Forrest Fortran");
-            var james = AddNewCustomer("James Java");
-            var tet = AddNewFilm("The Exploding Tire","Michael Bay", 3.99);
-            var bt = AddNewFilm("BoomTown", "Michael Bay", 3.99);
-            var kb = AddNewFilm("Kabuum", "Michael Bay", 2.95);
+            var alie = AddNewCustomer("Alie Algol", 18);
+            var forrest = AddNewCustomer("Forrest Fortran", 21);
+            var james = AddNewCustomer("James Java", 15);
+            var tet = AddNewFilm("The Exploding Tire","Michael Bay", 3.99, 13);
+            var bt = AddNewFilm("BoomTown", "Michael Bay", 3.99, 18);
+            var kb = AddNewFilm("Kabuum", "Michael Bay", 2.95,15);
             AddNewRental(tet, alie, new DateTime (2018,01,29));
             AddNewRental(bt, forrest, new DateTime(2018, 01, 31));
         }
 
-        private Customer AddNewCustomer(string name)
+        public Customer AddNewCustomer(string name, int age)
         {
             var c = new Customer()
-            { FullName = name };
+            { FullName = name, Age = age };
             Context.Customer.Add(c);
             Context.SaveChanges();
             return c;
         }
-        private Film AddNewFilm(string title, string director, double price)
+        private Film AddNewFilm(string title, string director, double price, int agerate)
         {
             var f = new Film()
-            {Title = title, Director = director, Price = price};
+            {Title = title, Director = director, Price = price, AgeRating = agerate};
             Context.Film.Add(f);
             Context.SaveChanges();
             return f;

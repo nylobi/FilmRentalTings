@@ -26,9 +26,6 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Template.SeedData", "Template.SeedData\Template.SeedData.csproj", "{DA6C0059-19B9-47AA-9282-36A169D11672}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{36822562-804F-4757-8B98-267B1E104FF5}"
-	ProjectSection(SolutionItems) = preProject
-		To Do List.txt = To Do List.txt
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
